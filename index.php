@@ -1,9 +1,7 @@
 <?php
-require ('header.php');
-session_start();
+require 'PHPmailer/PHPMailerAutoload.php';
 
 if(isset($_POST['submit_btn'])){
-require 'PHPmailer/PHPMailerAutoload.php';
 
 $name   = $_POST['name'];
 $email   = $_POST['email'];
@@ -47,10 +45,10 @@ if(!$mail->send()) {
 ?>
 <body>
     <form  method="post">
-        <input type="text" name="name" id="">
-        <input type="email" name="email" id="">
-        <input type="text" name="message" id="">
-        <input type="tel" name="number" id="">
+        <input type="text" name="name" id="" placeholder="name">
+        <input type="email" name="email" id="" placeholder="email">
+        <input type="text" name="message" id="" placeholder="message">
+        <input type="tel" name="number" id="" placeholder="number">
         <button type="submit" name="submit_btn">Submit</button>
     </form>
 </body>
